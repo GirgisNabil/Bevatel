@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TaskCard > renders TaskCard component correctly 1`] = `
+"<div class="rounded-lg border bg-card text-card-foreground shadow-sm p-4 flex justify-between">
+  <div class="flex flex-col gap-y-1.5 p-0">
+    <h3 class="tracking-tight text-lg font-normal">Sample Task</h3>
+    <p class="text-sm text-muted-foreground">This is a sample task description.</p>
+  </div>
+  <div class="p-0">
+    <div class="flex items-center gap-2">
+      <!-- edit dialog goes here -->
+      <div description="This is a sample task description." title="Sample Task" status="todo" id="1"></div>
+      <div id="1"></div>
+    </div>
+  </div>
+</div>"
+`;
