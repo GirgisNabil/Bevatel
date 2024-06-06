@@ -24,7 +24,7 @@ const schema = yup.object({
 })
 
 // Set up form with validation schema
-const { defineField, errors, values, handleSubmit } = useForm({
+const { defineField, errors, values, handleSubmit, resetForm } = useForm({
   validationSchema: schema
 })
 const [title, titleAttrs] = defineField('title')
@@ -41,7 +41,10 @@ const { status } = defineProps<{ status: ITaskStatus }>()
 
 // Manage dialog state
 const isOpen = ref<boolean>(false)
-const handleClose = () => (isOpen.value = false)
+const handleClose = () => {
+  isOpen.value = false
+  resetForm()
+}
 
 // Handle add task, only proceed if validation passes
 const handleAdd = handleSubmit(() => {
@@ -85,7 +88,6 @@ const handleAdd = handleSubmit(() => {
         </div>
 
         <DialogFooter class="mt-5 flex gap-2 ml-auto">
-          
           <Button type="submit">Create</Button>
         </DialogFooter>
       </form>
