@@ -13,7 +13,7 @@ export const useTasks = defineStore('tasks', {
       }
     ],
     filter: 'all',
-    nextId: 0
+    nextId: 2
   }),
   getters: {
     todoTasks: (state) => state.tasks.filter((task) => task.status === 'todo'),
@@ -38,10 +38,13 @@ export const useTasks = defineStore('tasks', {
     },
     updateTask(id: number, updatedTask: Partial<ITask>) {
       const task = this.tasks.find((task) => task.id === id)
-      if (task) {
-        Object.assign(task, updatedTask)
-        toast.success('Task Updated successfuly !!')
-      }
+      const index = this.tasks.findIndex((task) => task.id === id);
+this.tasks[index] = {...this.tasks[index] ,...updatedTask }
+      // if (task) {
+      //   Object.assign(task, updatedTask)
+
+      // }
+      toast.success('Task Updated successfuly !!')
     },
     setTaskStatus(id: number, status: 'todo' | 'inProgress' | 'done' | 'completed') {
       const task = this.tasks.find((task) => task.id === id)

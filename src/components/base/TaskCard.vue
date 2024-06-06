@@ -11,8 +11,8 @@ defineProps<ITask>()
 <template>
   <Card class="p-4 flex justify-between">
     <CardHeader class="p-0">
-      <CardTitle class="text-lg font-normal"> {{ title }}</CardTitle>
-      <CardDescription>{{ description }}</CardDescription>
+      <CardTitle class="text-lg font-normal max-w-56 truncate"> {{ title }}</CardTitle>
+      <CardDescription class="max-w-56 truncate">{{ description }}</CardDescription>
     </CardHeader>
     <CardContent class="p-0">
       <div class="flex items-center gap-2">
