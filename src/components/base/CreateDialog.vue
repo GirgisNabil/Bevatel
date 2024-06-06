@@ -85,7 +85,7 @@ const handleAdd = handleSubmit(() => {
         </div>
 
         <DialogFooter class="mt-5 flex gap-2 ml-auto">
-          <Button variant="outline" @click="isOpen = false">Cancel</Button>
+          
           <Button type="submit">Create</Button>
         </DialogFooter>
       </form>

@@ -33,7 +33,7 @@ defineProps<{ id: number }>()
       </DialogHeader>
 
       <DialogClose class="mt-5 flex gap-2 ml-auto">
-        <Button variant="outline">Cancel</Button>
+     
         <Button @click="removeTask(id)">delete</Button>
       </DialogClose>
     </DialogContent>
